@@ -12,15 +12,15 @@ $params = [
 	'from_url' => true,
 	'images' => [
 		[
-		'mode' => 'auto',
-		'extension' => 'jpg',
-		'width' => 1920,
-		'height' => 1920
+			'mode' => 'auto',
+			'extension' => 'jpg',
+			'width' => 1920,
+			'height' => 1920
 		],[
-		'mode' => 'fill',
-		'extension' => 'webp',
-		'width' => 300,
-		'height' => 300
+			'mode' => 'fill',
+			'extension' => 'webp',
+			'width' => 300,
+			'height' => 300
 		]
 	]
 ]
@@ -39,8 +39,7 @@ $params = [
 			'extension' => 'jpg',
 			'width' => 1920,
 			'height' => 1920
-		],
-		[
+		],[
 			'mode' => 'fill',
 			'extension' => 'webp',
 			'width' => 300,
@@ -64,6 +63,9 @@ $response = $monster->minify($params);
 }
 ````
 
+### Usage
+Download minified images from our storage to you. Generated images are accessible only for 1 hour. 
+
 ````js
 {
 	'success': false,
@@ -86,6 +88,7 @@ The `extension` property can have one of the following values:
 - `webp`
 
 The `quality` property can have one of the following values:
+
 - `auto` - default, if not set (auto quality is really recommended)
 - `X` - percentage (integer)
 
