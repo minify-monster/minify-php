@@ -24,7 +24,7 @@ $params = [
 		]
 	]
 ]
-$monster = new Monster($apikey);
+$monster = new Monster('your-api-key');
 $response = $monster->minify($params);
 ````
 **Request for Image upload:**
@@ -63,7 +63,6 @@ $response = $monster->minify($params);
 }
 ````
 
-### Usage
 Download minified images from our storage to you. Generated images are accessible only for 1 hour. 
 
 ````js
@@ -90,7 +89,7 @@ The `extension` property can have one of the following values:
 The `quality` property can have one of the following values:
 
 - `auto` - default, if not set (auto quality is really recommended)
-- `X` - percentage (integer)
+- `X` - quality in percentage (integer)
 
 The `mode` property can have one of the following values:
 
