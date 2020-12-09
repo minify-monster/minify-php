@@ -56,10 +56,10 @@ $response = $monster->minify($params);
 ````js
 {
 	'success': true,
-	'images': {
+	'images': [
 		'https://storage.minify.monster/random-filename-for-file-1.jpg',
 		'https://storage.minify.monster/random-filename-for-file-2.webp'
-	}
+	]
 }
 ````
 
