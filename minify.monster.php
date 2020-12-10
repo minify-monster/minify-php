@@ -12,7 +12,7 @@ class Monster {
 			];
 		} else {
 			if ($params['from_url'] === true) {
-				$result = $this->transformImage($params);
+				$result = $this->transformImage(array_merge($params, ['apikey' => $this->apiKey]));
 			} else {
 				if (file_exists($params['url'])) {
 					$upload = $this->uploadFile($params['url']);
@@ -60,38 +60,38 @@ class Monster {
 		}
 		return $result;
 	}
-	public function transformImage($input=NULL) {
+	public function transformImage($data=NULL) {
 		$ch=curl_init();
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_URL, 'https://api.minify.monster');
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
 		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($input));
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		$response = curl_exec($ch);
 		if (curl_errno($ch)) {
 			$curl_errno = curl_error($ch);
 		}
 		curl_close($ch);
-		if (isset($error_msg)) {
-			$pole=[
+		if (isset($curl_errno)) {
+			$result=[
 				'success' => false,
 				'message' => $curl_errno
 			];
 		} else {
 			$vysledek = json_decode($response, true);
 			if ($vysledek['success'] === true) {
-				$pole=[
+				$result=[
 					'success' => true,
 					'images' => $vysledek['images']
 				];
 			} else {
-				$pole=[
+				$result=[
 					'success' => false,
 					'message' => $vysledek['message']
 				];
 			}
 		}
-		return $pole;
+		return $result;
 	}
 }
