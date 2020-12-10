@@ -11,9 +11,9 @@ $data=[
 	'images' => [
 		[
 	    	'extension' => 'jpg',
-            'width' => 1280,
-            'height' => 1280
-	    ]
+			'width' => 1280,
+			'height' => 1280
+		]
 	]
 ];
 

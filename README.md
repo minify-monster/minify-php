@@ -96,6 +96,7 @@ The `mode` property can have one of the following values:
 - `auto` - default, if not set
 - `fill` - background with white color
 - `crop`
+- `exact`
 
 The `method` property can have one of the following values:
 
