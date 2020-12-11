@@ -10,7 +10,7 @@ $data=[
 	'url' => '/var/www/your-site/file.jpg',
 	'images' => [
 		[
-	    	'extension' => 'jpg',
+			'extension' => 'jpg',
 			'width' => 1280,
 			'height' => 1280
 		]
@@ -22,7 +22,7 @@ $response = $monster->minify($data);
 $result = json_decode($response, true);
 
 if ($result['success'] === true) {
-    echo "Success. Image URL: ".$result['images'][0];
+	echo "Success. Image URL: ".$result['images'][0];
 } else {
 	echo "Error: ".$result['message'];
 }

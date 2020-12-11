@@ -74,11 +74,19 @@ Download minified images from our storage to you. Generated images are accessibl
 
 ### Input parameters
 
-- `url` - image url or location on server
-- `from_url` - true if image url
+- `url` - image url or location on server	*[required]*
+- `from_url` - true if image url	*[required if `url`]*
+- `images` - array with requests for compression	*[required]*
+
+#### images request:
+
 - `width` - in pixels (if not set, width will preserve)
 - `height` - in pixels (if not set, height will preserve)
-- `images` - array with requests for compression
+- `extension` - set ouput format
+- `quality` - set quality compression
+- `mode` - resized method
+- `method` - used optimize method
+- `dpi` - set the result dpi (integer)
 
 The `extension` property can have one of the following values:
 
@@ -96,7 +104,7 @@ The `mode` property can have one of the following values:
 - `auto` - default, if not set
 - `fill` - background with white color
 - `crop`
-- `exact`
+- `exact` - if width or height not set (or 0), then aspect ratio is used
 
 The `method` property can have one of the following values:
 
