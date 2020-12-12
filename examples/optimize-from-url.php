@@ -1,7 +1,7 @@
 <?php
 /**
 Minify image from URL to 2 files - jpg and webp. And save them to local storage.
-With same dimensions as original, but smaller.
+With same dimensions as original.
 */
 
 require_once __DIR__.'/minify.monster.php';
@@ -23,8 +23,8 @@ $response = $monster->minify($data);
 $result = json_decode($response, true);
 
 if ($result['success'] === true) {
-    // path to save optimized images
-    $save_name = [
+	// path to save optimized images
+	$save_name = [
 		__DIR__.'/images/result.jpg',
 		__DIR__.'/images/result.webp'
 	];

@@ -74,19 +74,29 @@ Download minified images from our storage to you. Generated images are accessibl
 
 ### Input parameters
 
-- `url` - image url or location on server	*[required]*
-- `from_url` - true if image url	*[required if `url`]*
-- `images` - array with requests for compression	*[required]*
+- `url` - image url or location on server
+	- *required*
+- `from_url` - true if image url
+	- *required if `url`*
+- `images` - array with requests for compression
+	- *required*
 
 #### images request:
 
-- `width` - in pixels (if not set, width will preserve)
-- `height` - in pixels (if not set, height will preserve)
+- `width` - in pixels
+	- if not set, width will preserve
+- `height` - in pixels
+	- if not set, height will preserve
 - `extension` - set ouput format
+	- if not set, same extension as source will be used
 - `quality` - set quality compression
 - `mode` - resized method
 - `method` - used optimize method
 - `dpi` - set the result dpi (integer)
+- `background` - set the background color, if necessary
+	- for fill mode, or for png transparent images optimized to non-transparent format
+	- can be formatted in HEX #fff or #ffffff, rgb(255, 255, 255) or rgba(255, 255, 255, 0))
+	- default white
 
 The `extension` property can have one of the following values:
 
@@ -96,13 +106,14 @@ The `extension` property can have one of the following values:
 
 The `quality` property can have one of the following values:
 
-- `auto` - default, if not set (auto quality is really recommended)
+- `auto` - default, if not set
+	- auto quality is **highly recommended**
 - `X` - quality in percentage (integer)
 
 The `mode` property can have one of the following values:
 
 - `auto` - default, if not set
-- `fill` - background with white color
+- `fill`
 - `crop`
 - `exact` - if width or height not set (or 0), then aspect ratio is used
 
