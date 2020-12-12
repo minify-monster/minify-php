@@ -90,13 +90,17 @@ Download minified images from our storage to you. Generated images are accessibl
 - `extension` - set ouput format
 	- if not set, same extension as source will be used
 - `quality` - set quality compression
-- `mode` - resized method
+	- used for **jpg** and **webp** output only
+- `mode` - resized strategy
 - `method` - used optimize method
-- `dpi` - set the result dpi (integer)
 - `background` - set the background color, if necessary
 	- for fill mode, or for png transparent images optimized to non-transparent format
 	- can be formatted in HEX #fff or #ffffff, rgb(255, 255, 255) or rgba(255, 255, 255, 0))
 	- default white
+- `lossless` - set lossless compression
+	- used for **webp** output only
+	- set losslees to true if you want best quality and size doesn't matter (parameter quality is ignored)
+- `dpi` - set the result dpi (integer)
 
 The `extension` property can have one of the following values:
 
@@ -125,3 +129,18 @@ The `method` property can have one of the following values:
 - `BILINEAR`
 - `HAMMING`
 - `BICUBIC`
+
+The `background` property examples:
+
+- `#fff`
+- `#ffffff`
+- `rgb(255, 255, 255)`
+- `rgba(255, 255, 255, 0)`
+
+The `lossless` property examples:
+
+- `true`
+
+The `lossless` property examples:
+
+- `300`
