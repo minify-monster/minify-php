@@ -90,7 +90,6 @@ Download minified images from our storage to you. Generated images are accessibl
 - `extension` - set ouput format
 	- if not set, same extension as source will be used
 - `quality` - set quality compression
-	- used for **jpg** and **webp** output only
 - `mode` - resized strategy
 - `method` - used optimize method
 - `background` - set the background color, if necessary
@@ -100,7 +99,6 @@ Download minified images from our storage to you. Generated images are accessibl
 - `lossless` - set lossless compression
 	- used for **webp** output only
 	- set losslees to true if you want best quality and size doesn't matter (parameter quality is ignored)
-- `dpi` - set the result dpi (integer)
 
 The `extension` property can have one of the following values:
 
@@ -140,7 +138,3 @@ The `background` property examples:
 The `lossless` property examples:
 
 - `true`
-
-The `lossless` property examples:
-
-- `300`
