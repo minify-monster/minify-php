@@ -121,7 +121,7 @@ The `mode` property can have one of the following values:
 
 The `method` property can have one of the following values:
 
-- `LANCZOS` - default, if not set
+- `LANCZOS` - default (and best), if not set
 - `NEAREST`
 - `BOX`
 - `BILINEAR`
