@@ -90,8 +90,8 @@ Download minified images from our storage to you. Generated images are accessibl
 - `extension` - set ouput format
 	- if not set, same extension as source will be used
 - `quality` - set quality compression
-- `mode` - resized strategy
-- `method` - used optimize method
+- `mode` - resizing strategy
+- `method` - resizing method
 - `background` - set the background color, if necessary
 	- for fill mode, or for png transparent images optimized to non-transparent format
 	- can be formatted in HEX #fff or #ffffff, rgb(255, 255, 255) or rgba(255, 255, 255, 0))
@@ -99,12 +99,17 @@ Download minified images from our storage to you. Generated images are accessibl
 - `lossless` - set lossless compression
 	- used for **webp** output only
 	- set losslees to true if you want best quality and size doesn't matter (parameter quality is ignored)
+- `watermark` - url of watermark image
+	- if you want to add watermark into output image
+- `watermark_position` - watermark position
+- `watermark_size` - in percent
 
 The `extension` property can have one of the following values:
 
 - `jpg`
 - `png`
 - `webp`
+- `svg` - only if source is svg too
 
 The `quality` property can have one of the following values:
 
@@ -121,7 +126,7 @@ The `mode` property can have one of the following values:
 
 The `method` property can have one of the following values:
 
-- `LANCZOS` - default (and best), if not set
+- `LANCZOS` - default, if not set
 - `NEAREST`
 - `BOX`
 - `BILINEAR`
@@ -138,3 +143,23 @@ The `background` property examples:
 The `lossless` property examples:
 
 - `true`
+
+The `watermark_position` property can have one of the following values:
+
+- `c` - center
+- `tl` - top left
+- `tr` - top right
+- `bl` - bottom left
+- `br` - bottom right (default, if not set)
+
+The `watermark_size` property examples:
+
+- `100` - cover all image
+- `10` - 10 % (default, if not set)
+
+**Response:**
+
+As source we can handle not only jpg, png, webp, gif. But almost all graphics format like bmp, ico, jp2, tiff, eps, psd, pic, and much more. Feel free to try your files.
+We can handle svg file too.
+And we can do minify css and js files.
+Supoort for avif file is under construction.
