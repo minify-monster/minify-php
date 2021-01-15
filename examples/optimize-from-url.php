@@ -37,15 +37,15 @@ if ($result['success'] === true) {
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		curl_setopt($ch, CURLOPT_FILE, $fp);
-		$curl_result = curl_exec($ch);
+		curl_exec($ch);
 		$errorCode = curl_errno($ch);
-		curl_close($ch);
-		fclose($fp);
 		if (empty($errorCode)) {
 			echo "File ".$save_name[$row]." saved.<br/>";
 		} else {
-			echo "Error save file ".$save_name[$row]."<br/>";
+			echo "Error for ".$save_name[$row].": ".curl_error($ch)."<br/>";
 		}
+		curl_close($ch);
+		fclose($fp);
 		$row++;
 	}
 } else {

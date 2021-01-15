@@ -47,13 +47,13 @@ class Monster {
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		$response = curl_exec($ch);
 		if (curl_errno($ch)) {
-			$curl_errno = curl_error($ch);
+			$curl_error = curl_error($ch);
 		}
 		curl_close($ch);
-		if (isset($curl_errno)) {
+		if (isset($curl_error)) {
 			$result=[
 				'success' => false,
-				'message' => $curl_errno
+				'message' => $curl_error
 			];
 		} else {
 			$result = json_decode($response, true);
@@ -70,25 +70,25 @@ class Monster {
 		curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 		$response = curl_exec($ch);
 		if (curl_errno($ch)) {
-			$curl_errno = curl_error($ch);
+			$curl_error = curl_error($ch);
 		}
 		curl_close($ch);
-		if (isset($curl_errno)) {
+		if (isset($curl_error)) {
 			$result=[
 				'success' => false,
-				'message' => $curl_errno
+				'message' => $curl_error
 			];
 		} else {
-			$vysledek = json_decode($response, true);
-			if ($vysledek['success'] === true) {
+			$transform = json_decode($response, true);
+			if ($transform['success'] === true) {
 				$result=[
 					'success' => true,
-					'images' => $vysledek['images']
+					'images' => $transform['images']
 				];
 			} else {
 				$result=[
 					'success' => false,
-					'message' => $vysledek['message']
+					'message' => $transform['message']
 				];
 			}
 		}

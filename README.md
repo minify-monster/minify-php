@@ -109,6 +109,7 @@ The `extension` property can have one of the following values:
 - `jpg`
 - `png`
 - `webp`
+- `gif`
 - `svg` - only if source is svg too
 - `css` - only if source is css too (no need to enter, css will output always as css)
 - `js` - only if source is js too (no need to enter, js will output always as js)
@@ -164,4 +165,4 @@ The `watermark_size` property examples:
 As source we can handle not only **jpg**, **png**, **webp**, **gif**. But almost all graphics format like **bmp**, **ico**, **jp2**, **tiff**, **eps**, **psd**, **pic**, and much more. Feel free to try your files.
 We can handle **svg** file too.
 And we can do minify **css** and **js** files.
-Supoort for **avif** file is under construction.
+Support for **avif** file is under construction.
