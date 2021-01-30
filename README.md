@@ -30,7 +30,6 @@ $response = $monster->minify($params);
 **Request for Image upload:**
 
 ````php
-require_once 'minify.monster.php';
 $params = [
 	'url' => '/var/www/your-site/file.jpg',
 	'images' => [
