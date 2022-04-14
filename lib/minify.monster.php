@@ -83,7 +83,8 @@ class Monster {
 			if ($transform['success'] === true) {
 				$result=[
 					'success' => true,
-					'images' => $transform['images']
+					'images' => $transform['images'],
+					'extra' => $transform['extra']
 				];
 			} else {
 				$result=[
