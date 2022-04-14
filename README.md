@@ -58,6 +58,9 @@ $response = $monster->minify($params);
 	'images': [
 		'https://storage.minify.monster/random-filename-for-file-1.jpg',
 		'https://storage.minify.monster/random-filename-for-file-2.webp'
+	],
+	'extra': [
+		'white': 80
 	]
 }
 ````
@@ -165,3 +168,7 @@ As source we can handle not only **jpg**, **png**, **webp**, **gif**. But almost
 We can handle **svg** file too.
 And we can do minify **css** and **js** files.
 Support for **avif** file is under construction.
+
+The `extra` array is experimental:
+
+- `white` - white color ratio in percentage
